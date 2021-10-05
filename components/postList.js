@@ -7,7 +7,7 @@ const PostList = ({ posts }) => {
   return (
     <div>
       <div className="posts">
-        {posts.map((post, index) => {
+        {posts.map((post) => {
           return (
             <div key={post.id} className="post">
               <div style={{ display: "block" }}>
