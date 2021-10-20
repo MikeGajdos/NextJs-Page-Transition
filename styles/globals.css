@@ -96,6 +96,13 @@ img {
 .author {
   color: #555;
 }
+.polacek {
+  opacity: 0;
+  visibility: hidden;
+}
+.cuntPolacek {
+  opacity: 0;
+}
 
 @media (max-width: 700px) {
   .post {
