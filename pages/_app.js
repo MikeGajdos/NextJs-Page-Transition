@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import Layout from "../components/layout";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 // import { TransitionProvider } from "../animation/TransitionContext";
 // import { TransitionProvider } from "../animation/TransitionContext";
 import TransitionLayout from "../animation/TransitionLayout";
