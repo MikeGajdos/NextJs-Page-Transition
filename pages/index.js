@@ -10,6 +10,7 @@ export default function Home() {
       animate={{
         opacity: 1,
         transition: {
+          // when: "beforeChildren",
           duration: 0.2,
         },
       }}
