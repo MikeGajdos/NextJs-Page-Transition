@@ -4,7 +4,7 @@ import { useState, useContext, useRef, useEffect } from "react";
 import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
 
 export default function TransitionLayout({ children }) {
-  const [displayChildren, setDisplayChildren] = useState();
+  const [displayChildren, setDisplayChildren] = useState(children);
   const { timeline, background } = useContext(TransitionContext);
   const el = useRef();
 
@@ -17,27 +17,19 @@ export default function TransitionLayout({ children }) {
         timeline.play().then(() => {
           // outro complete so reset to an empty paused timeline
           timeline.seek(0).pause().clear();
-
-          // setDisplayChildren(children);
+          setDisplayChildren(children);
         });
       }
     }
   }, [children]);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.to(el.current, {
+      background,
       opacity: 1,
-      duration: 0.2,
+      duration: 1,
     });
-  }, [children]);
-
-  // useIsomorphicLayoutEffect(() => {
-  //   gsap.to(el.current, {
-  //     background,
-  //     opacity: 1,
-  //     duration: 10,
-  //   });
-  // }, [background]);
+  }, [background]);
 
   return (
     <div ref={el} className="cuntPolacek">

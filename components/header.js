@@ -6,7 +6,7 @@ const Header = () => {
     <div className="header-wrapper">
       <div className="logo">
         <Link href="/" passHref>
-          <a>Next.js and Framer Motion</a>
+          <a>Next.js and Gsap</a>
         </Link>
       </div>
     </div>

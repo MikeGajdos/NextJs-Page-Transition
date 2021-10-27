@@ -8,13 +8,11 @@ import { TransitionProvider } from "../animation/TransitionContext";
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <Layout>
-      <TransitionProvider>
-        <TransitionLayout>
-          <Component {...pageProps} key={router.route} />
-        </TransitionLayout>
-      </TransitionProvider>
-    </Layout>
+    <TransitionProvider>
+      <TransitionLayout>
+        <Component {...pageProps} key={router.route} />
+      </TransitionLayout>
+    </TransitionProvider>
   );
 }
 

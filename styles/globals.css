@@ -98,9 +98,11 @@ img {
 }
 .polacek {
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
+  overflow: hidden;
 }
 .cuntPolacek {
+  overflow: hidden;
   opacity: 0;
 }
 
