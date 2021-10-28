@@ -45,7 +45,7 @@ img {
   width: auto;
   min-height: 100vh;
 }
-.cunt {
+.imageWrapper {
   display: flex;
   position: relative;
   flex-direction: column;

@@ -9,8 +9,8 @@ const pageVariant = {
   exit: {
     opacity: 0,
     transition: {
-      delayChildren: 0.2,
-      staggerChildren: 0.1,
+      when: "afterChildren",
+      staggerChildren: 0.5,
     },
   },
   enter: {
@@ -75,27 +75,17 @@ const Post = ({ post }) => {
   return (
     <motion.div
       className="container post"
-      // initial={{ opacity: 0 }}
-      // animate={{
-      //   opacity: 1,
-      //   transition: {
-      //     duration: 0.2,
-      //   },
-      // }}
-      // exit={{ opacity: 0 }}
       initial="exit"
       animate="enter"
       exit="exit"
       variants={pageVariant}
     >
-      <motion.div className="cunt" variants={imageVariants}>
+      <motion.div className="imageWrapper" variants={imageVariants}>
         <Image
           src={`/image-${post.id}.jpg`}
           alt="cunt"
           width={600}
           height={450}
-          //   layout="fill"
-          //   objectFit="cover"
         />
       </motion.div>
       <motion.div variants={textVariants}>

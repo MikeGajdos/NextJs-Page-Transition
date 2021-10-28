@@ -14,7 +14,6 @@ const fadeInUp = {
     y: 0,
     opacity: 1,
     transition: {
-      // delay: 2,
       duration: 0.2,
       ease: easing,
     },
@@ -23,7 +22,7 @@ const fadeInUp = {
     scale: 0.6,
     y: 100,
     opacity: 0,
-    // transition: { duration: 0.2, ease: [0.48, 0.15, 0.25, 0.96] },
+    transition: { duration: 0.2, ease: [0.48, 0.15, 0.25, 0.96] },
   },
 };
 
@@ -43,12 +42,7 @@ const PostList = ({ posts }) => {
       <motion.div className="posts" variants={staggered}>
         {posts.map((post) => {
           return (
-            <motion.div
-              key={post.id}
-              className="post"
-              transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 0.5 }}
-              variants={fadeInUp}
-            >
+            <motion.div key={post.id} className="post" variants={fadeInUp}>
               <div style={{ display: "block" }}>
                 <Link href={`/posts/${post.id}`} passHref>
                   <a>

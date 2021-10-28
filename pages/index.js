@@ -10,11 +10,16 @@ export default function Home() {
       animate={{
         opacity: 1,
         transition: {
-          // when: "beforeChildren",
           duration: 0.2,
         },
       }}
-      exit={{ opacity: 0 }}
+      exit={{
+        opacity: 0,
+        transition: {
+          duration: 0.7,
+          when: "afterChildren",
+        },
+      }}
     >
       <PostList posts={posts} />
     </motion.div>
