@@ -25,11 +25,12 @@ const pageVariant = {
 let easing = [0.175, 0.85, 0.42, 0.96];
 
 const imageVariants = {
-  exit: { y: 150, opacity: 0, transition: { duration: 0.5, ease: easing } },
+  exit: { x: 150, opacity: 0, transition: { duration: 0.5, ease: easing } },
   enter: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
+      delay: 0.2,
       duration: 0.5,
       ease: easing,
     },
@@ -80,14 +81,15 @@ const Post = ({ post }) => {
       exit="exit"
       variants={pageVariant}
     >
-      <motion.div className="imageWrapper" variants={imageVariants}>
+      <motion.div className=" imageWrapper" variants={imageVariants}>
         <Image
           src={`/image-${post.id}.jpg`}
-          alt="cunt"
+          alt="image"
           width={600}
           height={450}
         />
       </motion.div>
+
       <motion.div variants={textVariants}>
         <PostInfo post={post} />
         <p>{post.text}</p>
